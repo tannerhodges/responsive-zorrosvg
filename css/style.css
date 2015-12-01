@@ -66,19 +66,19 @@
 /**
  * Sample styles to position ZorroSVG images and content.
  */
-/* line 64, ../scss/style.scss */
+/* line 78, ../scss/style.scss */
 .c-home-food {
   padding: 0 0 59.75%;
   margin-bottom: calc(-9.6666666667% - 2px);
 }
 
-/* line 68, ../scss/style.scss */
+/* line 82, ../scss/style.scss */
 .c-home-food .o-zorro-svg__image {
   height: 100%;
   padding: 0;
 }
 
-/* line 72, ../scss/style.scss */
+/* line 86, ../scss/style.scss */
 .c-home-food .o-zorro-svg__content {
   position: absolute;
   left: 0;
@@ -88,19 +88,19 @@
 }
 
 @media (max-width: 475px) {
-  /* line 82, ../scss/style.scss */
+  /* line 96, ../scss/style.scss */
   .c-home-food {
     height: auto;
     margin: -2px 0;
     padding-bottom: 0;
   }
 
-  /* line 87, ../scss/style.scss */
+  /* line 101, ../scss/style.scss */
   .c-home-food .o-zorro-svg__image {
     height: 119.301164725%;
   }
 
-  /* line 90, ../scss/style.scss */
+  /* line 104, ../scss/style.scss */
   .c-home-food .o-zorro-svg__content {
     position: relative;
     height: auto;
@@ -109,17 +109,17 @@
 /**
  * Decorations
  */
-/* line 103, ../scss/style.scss */
+/* line 117, ../scss/style.scss */
 body {
   background: #900;
 }
 
-/* line 106, ../scss/style.scss */
+/* line 120, ../scss/style.scss */
 .c-home-food {
   color: #fff;
 }
 
-/* line 109, ../scss/style.scss */
+/* line 123, ../scss/style.scss */
 .u-gutter {
   padding: 2em;
 }
@@ -127,12 +127,12 @@ body {
 /**
  * Reset box-model for everything
  */
-/* line 116, ../scss/style.scss */
+/* line 130, ../scss/style.scss */
 * {
   margin: 0;
   padding: 0;
 }
-/* line 120, ../scss/style.scss */
+/* line 134, ../scss/style.scss */
 *, *::before, *::after {
   box-sizing: border-box;
 }

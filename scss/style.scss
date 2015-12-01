@@ -58,6 +58,20 @@
 // ------------------------------
 // ------------------------------
 
+// Note: This could work, but we have to get the animation to trigger once the
+// images are loaded, not before. Seems like JS is the only way.
+// @keyframes trigger-repaint {
+//   from { margin: 0 0 1px; }
+// }
+// .o-zorro-svg__image {
+//   margin: 0;
+//   animation: 0.1s trigger-repaint 1s;
+// }
+
+// ------------------------------
+// ------------------------------
+// ------------------------------
+
 /**
  * Sample styles to position ZorroSVG images and content.
  */

@@ -26,18 +26,6 @@
         <g filter="url(#svg-filter-565dc3a2deaf2)">
           <switch>
             <foreignObject x="0" y="0" width="100%" height="200%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-              <!-- <img src="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg" alt="A sandwich."
-                srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg   1.5x,
-                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg       2x,
-                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg   2.5x,
-                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg       3x"> -->
-
-              <!-- <img src="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg.jpg" alt="A sandwich."
-                srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-1.5x.jpg   1.5x,
-                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-2x.jpg       2x,
-                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-2.5x.jpg   2.5x,
-                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-3x.jpg       3x"> -->
-
               <!-- Q: Does inline width affect the rendering? Or is it just
               different images loading based on connection speed?
 
@@ -57,14 +45,36 @@
               <!-- I really wish DevTools could record Network and Timeline data
               simultaneously. -->
 
+              <!-- <img src="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg" alt="A sandwich."
+                srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg   1.5x,
+                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg       2x,
+                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg   2.5x,
+                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg       3x"> -->
+
               <!-- <img src="img/progressive/home-food__bg.jpg" alt="A sandwich."
                 srcset="img/progressive/home-food__bg-1.5x.jpg   1.5x,
                         img/progressive/home-food__bg-2x.jpg       2x,
                         img/progressive/home-food__bg-2.5x.jpg   2.5x,
                         img/progressive/home-food__bg-3x.jpg       3x"> -->
 
-              <!-- TODO: Why are 2 images being downloaded? -->
               <picture>
+                <source srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg        400w,
+                                http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg   600w,
+                                http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg     800w,
+                                http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg  1000w,
+                                http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg    1200w"
+                        type="image/jpeg"
+                        sizes="100vw">
+
+                <img src="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg" alt="A sandwich."
+                     srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg   1.5x,
+                             http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg       2x,
+                             http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg   2.5x,
+                             http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg       3x"
+                      width="400" height="478">
+              </picture>
+
+              <!-- <picture>
                 <source srcset="img/progressive/home-food__bg.jpg        400w,
                                 img/progressive/home-food__bg-1.5x.jpg   600w,
                                 img/progressive/home-food__bg-2x.jpg     800w,
@@ -79,10 +89,15 @@
                              img/progressive/home-food__bg-2.5x.jpg   2.5x,
                              img/progressive/home-food__bg-3x.jpg       3x"
                       width="400" height="478">
-              </picture>
+              </picture> -->
             </foreignObject>
 
-            <image xlink:href="img/progressive/home-food__bg.jpg" x="0" y="0" width="1200" height="717">
+            <!-- Note: For whatever reason, it looks Chrome is downloading
+            this image despite the `switch` statement. And Firefox loads the
+            default `src` no matter what. So does Safari. And IE doesn't
+            support `picture` or `srcset` at all, so we need a fallback for
+            that. Woof. -->
+            <image xlink:href="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg" x="0" y="0" width="1200" height="717">
                 <title>A sandwich.</title>
             </image>
           </switch>
@@ -95,5 +110,32 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam voluptatibus fugiat, in delectus. Assumenda neque quasi odio dicta error. Consequatur a natus deserunt aliquid tenetur alias soluta. Commodi, repudiandae, corrupti.</p>
     </div>
   </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
+  <script>
+  var startTime = Date.now();
+  function timeSince() {
+    return Date.now() - startTime;
+  }
+
+  console.log('Start script', timeSince());
+  var objects = document.querySelectorAll('.o-zorro-svg__image');
+
+  function triggerRepaint() {
+    console.log('Trigger repaint', timeSince());
+    setTimeout(function(){}, 50); // Timeout helps make our image-loaded guess a bit more stable. But woof.
+
+    // console.log('Loop through objects', timeSince());
+    for (var i = 0; i < objects.length; i++) {
+      console.log(objects[i], timeSince());
+      objects[i].style.margin = 'auto';
+    }
+  }
+
+  console.log('Adding listener', timeSince());
+  // document.addEventListener('DOMContentLoaded', triggerRepaint);
+  // setTimeout(triggerRepaint, 0);
+  imagesLoaded(objects, triggerRepaint);
+  </script>
 </body>
 </html>
