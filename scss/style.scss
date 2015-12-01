@@ -38,8 +38,12 @@
   padding: 0 0 100%;
   pointer-events: none;
 
+  picture,
   img {
     width: 100%;
+  }
+  img {
+    height: auto;
   }
 }
 .o-zorro-svg__content {

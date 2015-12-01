@@ -24,57 +24,68 @@
         </defs>
 
         <g filter="url(#svg-filter-565dc3a2deaf2)">
-          <foreignObject x="0" y="0" width="100%" height="200%">
-            <!-- <img src="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg" alt="A sandwich."
-              srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg   1.5x,
-                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg       2x,
-                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg   2.5x,
-                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg       3x"> -->
+          <switch>
+            <foreignObject x="0" y="0" width="100%" height="200%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+              <!-- <img src="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg" alt="A sandwich."
+                srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg   1.5x,
+                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg       2x,
+                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg   2.5x,
+                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg       3x"> -->
 
-            <!-- <img src="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg.jpg" alt="A sandwich."
-              srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-1.5x.jpg   1.5x,
-                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-2x.jpg       2x,
-                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-2.5x.jpg   2.5x,
-                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-3x.jpg       3x"> -->
+              <!-- <img src="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg.jpg" alt="A sandwich."
+                srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-1.5x.jpg   1.5x,
+                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-2x.jpg       2x,
+                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-2.5x.jpg   2.5x,
+                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-3x.jpg       3x"> -->
 
-            <!-- Q: Does inline width affect the rendering? Or is it just
-            different images loading based on connection speed?
+              <!-- Q: Does inline width affect the rendering? Or is it just
+              different images loading based on connection speed?
 
-            A: Looks like it's the correct image. For some reason we're still
-            getting a pixelated image, though. -->
+              A: Looks like it's the correct image. For some reason we're still
+              getting a pixelated image, though. -->
 
-            <!-- From the DevTools Timeline, the image is decoded and rendered
-            once the first byte is returned. Nothing tells Chrome to repaint
-            after the image is fully downloaded, so you get the pixelated
-            first byte version. Note: the full quality image is repainted once
-            you resize the page. -->
+              <!-- From the DevTools Timeline, the image is decoded and rendered
+              once the first byte is returned. Nothing tells Chrome to repaint
+              after the image is fully downloaded, so you get the pixelated
+              first byte version. Note: the full quality image is repainted once
+              you resize the page. -->
 
-            <!-- The first byte image is most noticeable when referencing an
-            external image. If you load a local image immediately, the problem
-            is resolved. -->
+              <!-- The first byte image is most noticeable when referencing an
+              external image. If you load a local image immediately, the problem
+              is resolved. -->
 
-            <!-- I really wish DevTools could record Network and Timeline data
-            simultaneously. -->
+              <!-- I really wish DevTools could record Network and Timeline data
+              simultaneously. -->
 
-            <img src="img/progressive/home-food__bg.jpg" alt="A sandwich."
-              srcset="img/progressive/home-food__bg-1.5x.jpg   1.5x,
-                      img/progressive/home-food__bg-2x.jpg       2x,
-                      img/progressive/home-food__bg-2.5x.jpg   2.5x,
-                      img/progressive/home-food__bg-3x.jpg       3x">
+              <!-- <img src="img/progressive/home-food__bg.jpg" alt="A sandwich."
+                srcset="img/progressive/home-food__bg-1.5x.jpg   1.5x,
+                        img/progressive/home-food__bg-2x.jpg       2x,
+                        img/progressive/home-food__bg-2.5x.jpg   2.5x,
+                        img/progressive/home-food__bg-3x.jpg       3x"> -->
 
+              <!-- TODO: Why are 2 images being downloaded? -->
+              <picture>
+                <source srcset="img/progressive/home-food__bg.jpg        400w,
+                                img/progressive/home-food__bg-1.5x.jpg   600w,
+                                img/progressive/home-food__bg-2x.jpg     800w,
+                                img/progressive/home-food__bg-2.5x.jpg  1000w,
+                                img/progressive/home-food__bg-3x.jpg    1200w"
+                        type="image/jpeg"
+                        sizes="100vw">
 
+                <img src="img/progressive/home-food__bg.jpg" alt="A sandwich."
+                     srcset="img/progressive/home-food__bg-1.5x.jpg   1.5x,
+                             img/progressive/home-food__bg-2x.jpg       2x,
+                             img/progressive/home-food__bg-2.5x.jpg   2.5x,
+                             img/progressive/home-food__bg-3x.jpg       3x"
+                      width="400" height="478">
+              </picture>
+            </foreignObject>
 
-            <!-- TODO: Why doesn't Codepen accept image sources? (returns 406 Not Acceptable) -->
-            <!-- <picture>
-              <source srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.png        400w,
-                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg   600w,
-                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg     800w,
-                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg  1000w,
-                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg    1200w"
-                  type="image/jpeg"
-                  sizes="71.42vw">
-            </picture> -->
-          </foreignObject>
+            <image xlink:href="img/progressive/home-food__bg.jpg" x="0" y="0" width="1200" height="717">
+                <title>A sandwich.</title>
+            </image>
+          </switch>
         </g>
       </svg>
     </object>
