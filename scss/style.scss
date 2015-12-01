@@ -1,0 +1,121 @@
+/**
+ * Wrap inline SVGs with an `object` to fix Safari's broken height calculations.
+ * http://benfrain.com/attempting-to-fix-responsive-svgs-in-desktop-safari
+ */
+._fix-safari-svg-height {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding: 0 0 100%;
+}
+._fix-safari-svg-height__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/**
+ * Position images and content using the ZorroSVG transparency technique.
+ */
+.o-zorro-svg {
+  position: relative;
+  width: 100%;
+  height: 0;
+  margin: -2px 0; // HACK: Remove whitespace aliasing around vertical edges
+  padding: 0 0 100%;
+  overflow: visible;
+  z-index: 1;
+}
+.o-zorro-svg__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  padding: 0 0 100%;
+  pointer-events: none;
+
+  img {
+    width: 100%;
+  }
+}
+.o-zorro-svg__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// ------------------------------
+// ------------------------------
+// ------------------------------
+
+/**
+ * Sample styles to position ZorroSVG images and content.
+ */
+.c-home-food {
+  padding: 0 0 59.75%;
+  margin-bottom: calc(-9.6666666667% - 2px);
+}
+.c-home-food .o-zorro-svg__image {
+  height: 100%;
+  padding: 0;
+}
+.c-home-food .o-zorro-svg__content {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 83.8214783821%;
+  top: 0;
+}
+
+// @media (max-width: 47.9375em) {
+@media (max-width: 475px) {
+  .c-home-food {
+    height: auto;
+    margin: -2px 0;
+    padding-bottom: 0;
+  }
+  .c-home-food .o-zorro-svg__image {
+    height: 119.301164725%;
+  }
+  .c-home-food .o-zorro-svg__content {
+    position: relative;
+    height: auto;
+  }
+}
+
+// ------------------------------
+// ------------------------------
+// ------------------------------
+
+/**
+ * Decorations
+ */
+body {
+    background: #900;
+}
+.c-home-food {
+    color: #fff;
+}
+.u-gutter {
+    padding: 2em;
+}
+
+/**
+ * Reset box-model for everything
+ */
+* {
+  margin: 0;
+  padding: 0;
+
+  &,
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}

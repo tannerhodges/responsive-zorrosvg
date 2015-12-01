@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  Tanner Hodges</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</head>
+<body>
+  <section class="o-zorro-svg  /  c-home-food">
+
+    <!-- Based on https://gist.github.com/basecode/3241579 -->
+    <!-- version="1.1" xmlns="http://www.w3.org/2000/svg" -->
+    <object class="_fix-safari-svg-height  /  o-zorro-svg__image">
+      <svg class="_fix-safari-svg-height__svg" width="1200" height="717" viewBox="0 0 1200 717" preserveAspectRatio="xMinYMin slice">
+        <defs>
+          <filter id="svg-filter-565dc3a2deaf2">
+            <!-- Note: Turns out we don't need this extra `feMerge`. It's just a timing issue with the render cycle. -->
+            <feOffset dy="-717" in="SourceGraphic" result="b"></feOffset>
+            <feColorMatrix in="b" result="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0"></feColorMatrix>
+            <feComposite in="SourceGraphic" in2="b" operator="in"></feComposite>
+          </filter>
+        </defs>
+
+        <g filter="url(#svg-filter-565dc3a2deaf2)">
+          <foreignObject x="0" y="0" width="100%" height="200%">
+            <!-- <img src="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg" alt="A sandwich."
+              srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg   1.5x,
+                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg       2x,
+                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg   2.5x,
+                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg       3x"> -->
+
+            <!-- <img src="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg.jpg" alt="A sandwich."
+              srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-1.5x.jpg   1.5x,
+                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-2x.jpg       2x,
+                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-2.5x.jpg   2.5x,
+                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/baseline/home-food__bg-3x.jpg       3x"> -->
+
+            <!-- Q: Does inline width affect the rendering? Or is it just
+            different images loading based on connection speed?
+
+            A: Looks like it's the correct image. For some reason we're still
+            getting a pixelated image, though. -->
+
+            <!-- From the DevTools Timeline, the image is decoded and rendered
+            once the first byte is returned. Nothing tells Chrome to repaint
+            after the image is fully downloaded, so you get the pixelated
+            first byte version. Note: the full quality image is repainted once
+            you resize the page. -->
+
+            <!-- The first byte image is most noticeable when referencing an
+            external image. If you load a local image immediately, the problem
+            is resolved. -->
+
+            <!-- I really wish DevTools could record Network and Timeline data
+            simultaneously. -->
+
+            <img src="img/progressive/home-food__bg.jpg" alt="A sandwich."
+              srcset="img/progressive/home-food__bg-1.5x.jpg   1.5x,
+                      img/progressive/home-food__bg-2x.jpg       2x,
+                      img/progressive/home-food__bg-2.5x.jpg   2.5x,
+                      img/progressive/home-food__bg-3x.jpg       3x">
+
+
+
+            <!-- TODO: Why doesn't Codepen accept image sources? (returns 406 Not Acceptable) -->
+            <!-- <picture>
+              <source srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.png        400w,
+                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg   600w,
+                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg     800w,
+                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg  1000w,
+                      http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg    1200w"
+                  type="image/jpeg"
+                  sizes="71.42vw">
+            </picture> -->
+          </foreignObject>
+        </g>
+      </svg>
+    </object>
+
+    <div class="o-zorro-svg__content  /  u-gutter">
+      <h1>Responsive ZorroSVG</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam voluptatibus fugiat, in delectus. Assumenda neque quasi odio dicta error. Consequatur a natus deserunt aliquid tenetur alias soluta. Commodi, repudiandae, corrupti.</p>
+    </div>
+  </section>
+</body>
+</html>
