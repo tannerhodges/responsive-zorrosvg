@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by Tanner Hodges</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ZorroSVG as background image w/ browser fixes -->
+  <section class="o-zorro-svg  /  c-home-food">
+    <object class="_fix-safari-svg-height  /  o-zorro-svg__image">
+      <svg class="_fix-safari-svg-height__svg" width="1200" height="717" viewBox="0 0 1200 717" preserveAspectRatio="xMinYMin slice">
+
+        <!-- Filter -->
+        <defs>
+          <filter id="svg-filter-02">
+            <feOffset dy="-717" in="SourceGraphic" result="b"></feOffset>
+            <feColorMatrix in="b" result="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0"></feColorMatrix>
+            <feComposite in="SourceGraphic" in2="b" operator="in"></feComposite>
+          </filter>
+        </defs>
+
+        <!-- Image -->
+        <image filter="url(#svg-filter-02)" x="0" y="0" width="100%" height="200%" xlink:href="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg"></image>
+
+      </svg>
+    </object>
+
+    <!-- Content -->
+    <div class="o-zorro-svg__content  /  u-gutter">
+      <h1>Responsive ZorroSVG</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam voluptatibus fugiat, in delectus. Assumenda neque quasi odio dicta error. Consequatur a natus deserunt aliquid tenetur alias soluta. Commodi, repudiandae, corrupti.</p>
+    </div>
+  </section>
+
+</body>
+</html>

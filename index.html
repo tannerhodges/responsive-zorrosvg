@@ -2,140 +2,31 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>A Pen by  Tanner Hodges</title>
+  <title>A Pen by Tanner Hodges</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </head>
 <body>
-  <section class="o-zorro-svg  /  c-home-food">
+  <h1>Responsive ZorroSVG</h1>
 
-    <!-- Based on https://gist.github.com/basecode/3241579 -->
-    <!-- version="1.1" xmlns="http://www.w3.org/2000/svg" -->
-    <object class="_fix-safari-svg-height  /  o-zorro-svg__image">
-      <svg class="_fix-safari-svg-height__svg" width="1200" height="717" viewBox="0 0 1200 717" preserveAspectRatio="xMinYMin slice">
-        <defs>
-          <filter id="svg-filter-565dc3a2deaf2">
-            <!-- Note: Turns out we don't need this extra `feMerge`. It's just a timing issue with the render cycle. -->
-            <feOffset dy="-717" in="SourceGraphic" result="b"></feOffset>
-            <feColorMatrix in="b" result="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0"></feColorMatrix>
-            <feComposite in="SourceGraphic" in2="b" operator="in"></feComposite>
-          </filter>
-        </defs>
+  <h2>Notes</h2>
 
-        <g filter="url(#svg-filter-565dc3a2deaf2)">
-          <switch>
-            <foreignObject x="0" y="0" width="100%" height="200%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-              <!-- Q: Does inline width affect the rendering? Or is it just
-              different images loading based on connection speed?
-
-              A: Looks like it's the correct image. For some reason we're still
-              getting a pixelated image, though. -->
-
-              <!-- From the DevTools Timeline, the image is decoded and rendered
-              once the first byte is returned. Nothing tells Chrome to repaint
-              after the image is fully downloaded, so you get the pixelated
-              first byte version. Note: the full quality image is repainted once
-              you resize the page. -->
-
-              <!-- The first byte image is most noticeable when referencing an
-              external image. If you load a local image immediately, the problem
-              is resolved. -->
-
-              <!-- I really wish DevTools could record Network and Timeline data
-              simultaneously. -->
-
-              <!-- <img src="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg" alt="A sandwich."
-                srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg   1.5x,
-                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg       2x,
-                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg   2.5x,
-                        http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg       3x"> -->
-
-              <!-- <img src="img/progressive/home-food__bg.jpg" alt="A sandwich."
-                srcset="img/progressive/home-food__bg-1.5x.jpg   1.5x,
-                        img/progressive/home-food__bg-2x.jpg       2x,
-                        img/progressive/home-food__bg-2.5x.jpg   2.5x,
-                        img/progressive/home-food__bg-3x.jpg       3x"> -->
-
-              <picture>
-                <source srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg        400w,
-                                http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg   600w,
-                                http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg     800w,
-                                http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg  1000w,
-                                http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg    1200w"
-                        type="image/jpeg"
-                        sizes="100vw">
-
-                <img src="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg" alt="A sandwich."
-                     srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg   1.5x,
-                             http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg       2x,
-                             http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg   2.5x,
-                             http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg       3x"
-                      width="400" height="478">
-              </picture>
-
-              <!-- <picture>
-                <source srcset="img/progressive/home-food__bg.jpg        400w,
-                                img/progressive/home-food__bg-1.5x.jpg   600w,
-                                img/progressive/home-food__bg-2x.jpg     800w,
-                                img/progressive/home-food__bg-2.5x.jpg  1000w,
-                                img/progressive/home-food__bg-3x.jpg    1200w"
-                        type="image/jpeg"
-                        sizes="100vw">
-
-                <img src="img/progressive/home-food__bg.jpg" alt="A sandwich."
-                     srcset="img/progressive/home-food__bg-1.5x.jpg   1.5x,
-                             img/progressive/home-food__bg-2x.jpg       2x,
-                             img/progressive/home-food__bg-2.5x.jpg   2.5x,
-                             img/progressive/home-food__bg-3x.jpg       3x"
-                      width="400" height="478">
-              </picture> -->
-            </foreignObject>
-
-            <!-- Note: For whatever reason, it looks Chrome is downloading
-            this image despite the `switch` statement. And Firefox loads the
-            default `src` no matter what. So does Safari. And IE doesn't
-            support `picture` or `srcset` at all, so we need a fallback for
-            that. Woof. -->
-            <image xlink:href="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg" x="0" y="0" width="1200" height="717">
-                <title>A sandwich.</title>
-            </image>
-          </switch>
-        </g>
-      </svg>
-    </object>
-
-    <div class="o-zorro-svg__content  /  u-gutter">
-      <h1>Responsive ZorroSVG</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam voluptatibus fugiat, in delectus. Assumenda neque quasi odio dicta error. Consequatur a natus deserunt aliquid tenetur alias soluta. Commodi, repudiandae, corrupti.</p>
-    </div>
-  </section>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
-  <script>
-  var startTime = Date.now();
-  function timeSince() {
-    return Date.now() - startTime;
-  }
-
-  console.log('Start script', timeSince());
-  var objects = document.querySelectorAll('.o-zorro-svg__image');
-
-  function triggerRepaint() {
-    console.log('Trigger repaint', timeSince());
-    setTimeout(function(){}, 50); // Timeout helps make our image-loaded guess a bit more stable. But woof.
-
-    // console.log('Loop through objects', timeSince());
-    for (var i = 0; i < objects.length; i++) {
-      console.log(objects[i], timeSince());
-      objects[i].style.margin = 'auto';
-    }
-  }
-
-  console.log('Adding listener', timeSince());
-  // document.addEventListener('DOMContentLoaded', triggerRepaint);
-  // setTimeout(triggerRepaint, 0);
-  imagesLoaded(objects, triggerRepaint);
-  </script>
+  <ul>
+    <li>Based on https://gist.github.com/basecode/3241579</li>
+    <li>Turns out we don't need this extra `feMerge`. It's just a timing issue with the render cycle.</li>
+    <li>`switch`</li>
+    <li>`foreignObject x="0" y="0" width="100%" height="200%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"`</li>
+    <li>Q: Does inline width affect the rendering? Or is it just different images loading based on connection speed?</li>
+    <li>A: Looks like it's the correct image. For some reason we're still getting a pixelated image, though.</li>
+    <li>From the DevTools Timeline, the image is decoded and rendered once the first byte is returned. Nothing tells Chrome to repaint after the image is fully downloaded, so you get the pixelated first byte version. Note: the full quality image is repainted once you resize the page.</li>
+    <li>The first byte image is most noticeable when referencing an external image. If you load a local image immediately, the problem is resolved.</li>
+    <li>I really wish DevTools could record Network and Timeline data simultaneously.</li>
+    <li>http://codepen.io/Tigt/post/when-responsive-images-get-ugly</li>
+    <li>http://scottjehl.github.io/picturefill/#img-sizes</li>
+    <li>https://github.com/scottjehl/picturefill#the-gotchas</li>
+    <li>For whatever reason, it looks Chrome is downloading this image despite the `switch` statement. And Firefox loads the default `src` no matter what. So does Safari. And IE doesn't support `picture` or `srcset` at all, so we need a fallback for that. Woof.</li>
+  </ul>
 </body>
 </html>

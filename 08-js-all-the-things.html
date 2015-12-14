@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by Tanner Hodges</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ZorroSVG as background image w/ browser fixes -->
+  <section class="o-zorro-svg  /  c-home-food">
+    <object class="_fix-safari-svg-height  /  o-zorro-svg__image">
+      <svg class="_fix-safari-svg-height__svg" width="1200" height="717" viewBox="0 0 1200 717" preserveAspectRatio="xMinYMin slice">
+
+        <!-- Filter -->
+        <defs>
+          <filter id="svg-filter-03">
+            <feOffset dy="-717" in="SourceGraphic" result="b"></feOffset>
+            <feColorMatrix in="b" result="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0"></feColorMatrix>
+            <feComposite in="SourceGraphic" in2="b" operator="in"></feComposite>
+          </filter>
+        </defs>
+
+        <!-- Image -->
+        <g filter="url(#svg-filter-03)">
+          <foreignObject x="0" y="0" width="100%" height="200%">
+            <!-- https://responsiveimages.org/ -->
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAgABsDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAABwAFBgEI/8QALhAAAQMBBAcIAwAAAAAAAAAAAQIDBAAFBhEhBxITFDFUkxhBUVVhcZTSQnKB/8QAFwEBAQEBAAAAAAAAAAAAAAAABAABAv/EABwRAAICAgMAAAAAAAAAAAAAAAABAjEDIhIhI//aAAwDAQACEQMRAD8AM7siOqYjXZQR7UqWeiydRtUltptv8jq4nAeA76B7KvFEjOhTm1AHgg1po9/rMaLpU2XVLRqpddZUVt/p3Cupt8dbMik3tQywYty7TtJmFFkPKcd4JXF1QcyOOPocqtpGjmwtsrCQhPpsU5UJWRfWAqzlLF4pkCUzmGjERqO4cM0pBP8AapXdIbRcUVMl5ROJcchoUpZ7ySc6EllfUmL81R733GJyrHTFTcYnKsdMUT9o3Rv5vJ+E79anaN0b+byfhO/WlhRY3GJyrHTFTcYnKsdMVirsaXbkXkZccs63Y6dmcFJkAsq98FYZV1/S9cNh5bTl5oAWk4HBeNRH/9k="
+                data-srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg    1200w,
+                            http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg   1000w,
+                            http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg      800w,
+                            http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg    600w,
+                            http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg         400w"
+                data-sizes="100vw"
+                alt="">
+          </foreignObject>
+        </g>
+
+      </svg>
+    </object>
+
+    <!-- Content -->
+    <div class="o-zorro-svg__content  /  u-gutter">
+      <h1>Responsive ZorroSVG</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam voluptatibus fugiat, in delectus. Assumenda neque quasi odio dicta error. Consequatur a natus deserunt aliquid tenetur alias soluta. Commodi, repudiandae, corrupti.</p>
+    </div>
+  </section>
+
+  <script>
+  /**
+   * Get time since script started. Helper for debugging with `console.log`.
+   * @return {Number}
+   */
+  var startTime = Date.now();
+  function timeSince() {
+    return Date.now() - startTime;
+  }
+  console.log('Start script', timeSince());
+
+  /**
+   * Remove empty elements from an array in Javascript
+   * Based on http://stackoverflow.com/a/281335/1786459
+   * @return {Array}
+   */
+  Array.prototype.clean = function() {
+    for (var i = 0; i < this.length; i++) {
+      if (!this[i]) {
+        this.splice(i, 1);
+        i--;
+      }
+    }
+    return this;
+  };
+
+  /**
+   * Crazy, picture-picking JS.
+   */
+  window.onload = function() {
+    var elements = document.querySelectorAll('.o-zorro-svg__image'),
+      windowSize = Math.max(
+        window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+        window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+      );
+
+    loadResponsiveImages(elements, windowSize);
+  };
+
+  function loadResponsiveImages(elements, windowSize) {
+    [].map.call(elements, function(el) {
+      loadResponsiveImage(el, windowSize);
+    });
+  }
+
+  function loadResponsiveImage(el, windowSize) {
+    var img = el.querySelector('img');
+
+    if (!img) {
+      console.log('No images found for element', el);
+      return false;
+    }
+
+    var srcset = img.getAttribute('data-srcset').replace(/\s+/g, ' ').trim().split(',');
+
+    var minSet = srcset.reduce(function(prev, curr) {
+      prev = !prev.size ? parseSet(prev) : prev;
+      curr = parseSet(curr);
+
+      return (curr.size >= windowSize && curr.size < prev.size) ? curr : prev;
+    });
+
+    var newImg = new Image();
+    newImg.src = minSet.url;
+    newImg.onload = function() {
+      img.src = minSet.url;
+    };
+  }
+
+  function parseSet(set) {
+    set = set.split(' ').clean();
+
+    var url = set[0],
+      size = parseInt(set[1].replace(/w/g, ''));
+
+    return {
+      "url": url,
+      "size": size
+    };
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by Tanner Hodges</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Masking based on ZorroSVG's technique http://quasimondo.com/ZorroSVG/ -->
+  <svg width="1200" height="717" viewBox="0 0 1200 717" preserveAspectRatio="xMinYMin slice">
+    <defs>
+      <filter id="svg-filter-01">
+        <feOffset dy="-717" in="SourceGraphic" result="b"></feOffset>
+        <feColorMatrix in="b" result="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0"></feColorMatrix>
+        <feComposite in="SourceGraphic" in2="b" operator="in"></feComposite>
+      </filter>
+    </defs>
+    <image filter="url(#svg-filter-01)" x="0" y="0" width="100%" height="200%" xlink:href="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg"></image>
+  </svg>
+
+</body>
+</html>
