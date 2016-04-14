@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by Tanner Hodges</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ZorroSVG as background image w/ browser fixes -->
+  <section class="o-zorro-svg  /  c-home-food">
+    <object class="_fix-safari-svg-height  /  o-zorro-svg__image">
+      <svg class="_fix-safari-svg-height__svg" width="1200" height="717" viewBox="0 0 1200 717" preserveAspectRatio="xMinYMin slice">
+
+        <!-- Filter -->
+        <defs>
+          <filter id="svg-filter">
+            <feOffset dy="-717" in="SourceGraphic" result="b"></feOffset>
+            <feColorMatrix in="b" result="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0"></feColorMatrix>
+            <feComposite in="SourceGraphic" in2="b" operator="in"></feComposite>
+          </filter>
+        </defs>
+
+        <!-- Image -->
+        <g filter="url(#svg-filter)">
+          <foreignObject x="0" y="0" width="100%" height="200%">
+            <!-- https://responsiveimages.org/ -->
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAgABsDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAABwAFBgEI/8QALhAAAQMBBAcIAwAAAAAAAAAAAQIDBAAFBhEhBxITFDFUkxhBUVVhcZTSQnKB/8QAFwEBAQEBAAAAAAAAAAAAAAAABAABAv/EABwRAAICAgMAAAAAAAAAAAAAAAABAjEDIhIhI//aAAwDAQACEQMRAD8AM7siOqYjXZQR7UqWeiydRtUltptv8jq4nAeA76B7KvFEjOhTm1AHgg1po9/rMaLpU2XVLRqpddZUVt/p3Cupt8dbMik3tQywYty7TtJmFFkPKcd4JXF1QcyOOPocqtpGjmwtsrCQhPpsU5UJWRfWAqzlLF4pkCUzmGjERqO4cM0pBP8AapXdIbRcUVMl5ROJcchoUpZ7ySc6EllfUmL81R733GJyrHTFTcYnKsdMUT9o3Rv5vJ+E79anaN0b+byfhO/WlhRY3GJyrHTFTcYnKsdMVirsaXbkXkZccs63Y6dmcFJkAsq98FYZV1/S9cNh5bTl5oAWk4HBeNRH/9k="
+                data-srcset="http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-3x.jpg    1200w,
+                            http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2.5x.jpg   1000w,
+                            http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-2x.jpg      800w,
+                            http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg-1.5x.jpg    600w,
+                            http://files.tannerhodges.com/codepen/img/responsive-zorrosvg/v3/progressive/home-food__bg.jpg         400w"
+                data-sizes="100vw"
+                alt="">
+          </foreignObject>
+        </g>
+
+      </svg>
+    </object>
+
+    <!-- Content -->
+    <div class="o-zorro-svg__content  /  u-gutter">
+      <h1>Responsive ZorroSVG w/ placeholder data URI</h1>
+      <p>
+        <!-- The idea: Use the blurred-out data URI technique to fade in a responsive... -->
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aliquam natus veniam quaerat odit culpa porro mollitia dolores et cupiditate alias fugit sed, sit tenetur error! Incidunt quasi, voluptate assumenda.
+      </p>
+    </div>
+  </section>
+
+  <script>
+  // ------------------------------
+  // Helpers
+  // ------------------------------
+
+  /**
+   * Get time since script started. Helper for debugging with `console.log`.
+   * @return {Number}
+   */
+  var startTime = Date.now();
+  function timeSince() {
+    return Date.now() - startTime;
+  }
+
+  /**
+   * Remove empty elements from an array in Javascript
+   * Based on http://stackoverflow.com/a/281335/1786459
+   * @return {Array}
+   */
+  Array.prototype.clean = function() {
+    for (var i = 0; i < this.length; i++) {
+      if (!this[i]) {
+        this.splice(i, 1);
+        i--;
+      }
+    }
+    return this;
+  };
+
+
+
+  // ------------------------------
+  // Responsize ZorroSVG
+  // ------------------------------
+
+  // Keep track of # images, so we know when they're all loaded
+  var imagesLoaded = 0,
+    totalImages = 0,
+    hasTriggeredLayout = false;
+
+  // Event to track when images are loaded
+  var zorroSvgLoaded = document.createEvent('Event');
+  zorroSvgLoaded.initEvent('zorroSvgLoaded', true, true);
+
+  /**
+   * Find all the responsive ZorroSVG elements on the page and load
+   * responsive images for each.
+   * @return {void}
+   */
+  function init() {
+    var elements = document.querySelectorAll('.o-zorro-svg__image'),
+      windowSize = Math.max(
+        window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+        window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+      );
+
+    totalImages = elements.length;
+    // console.log('totalImages = ' + totalImages);
+
+    loadResponsiveImages(elements, windowSize);
+  }
+  window.addEventListener('DOMContentLoaded', init);
+
+  /**
+   * Call loadResponsiveImage for an array of DOM elements.
+   * @param  {Array}  elements
+   * @param  {Number} windowSize
+   * @return {void}
+   */
+  function loadResponsiveImages(elements, windowSize) {
+    [].map.call(elements, function(el) {
+      loadResponsiveImage(el, windowSize);
+    });
+  }
+
+  /**
+   * Parse the srcset of an `img`, pick the image to load based on the
+   * viewport size (even though that's technically what `picture` is for),
+   * and load the nearest-sized image.
+   * @param  {Element} el
+   * @param  {Number}  windowSize
+   * @return {void}
+   */
+  function loadResponsiveImage(el, windowSize) {
+    var img = el.querySelector('img');
+
+    if (!img) {
+      console.log('No images found for element', el);
+      return false;
+    }
+
+    // Create an array of image sources based on `srceset`
+    var srcset = img.getAttribute('data-srcset').replace(/\s+/g, ' ').trim().split(',');
+
+    // Pick the minimum-sized image from `srcset` (based on windowSize)
+    var minSet = srcset.reduce(function(prev, curr) {
+      prev = !prev.size ? parseSet(prev) : prev;
+      curr = parseSet(curr);
+
+      return (curr.size >= windowSize && curr.size < prev.size) ? curr : prev;
+    });
+
+    // Load the image, set `src`, and update image count
+    var newImg = new Image();
+    newImg.src = minSet.url;
+    newImg.onload = function() {
+      img.src = minSet.url;
+      imagesLoaded++;
+      // console.log('imagesLoaded = ' + imagesLoaded);
+      window.dispatchEvent(zorroSvgLoaded);
+    };
+  }
+
+  /**
+   * Parse an image source from `srcset` into an object with the URL and size
+   * of the image.
+   * @param  {String} set
+   * @return {Object}
+   */
+  function parseSet(set) {
+    set = set.split(' ').clean();
+
+    var url = set[0],
+      size = parseInt(set[1].replace(/w/g, ''));
+
+    return {
+      "url": url,
+      "size": size
+    };
+  }
+
+  /**
+   * Force a page layout so the browser renders the final, downloaded image
+   * instead of just the first byte.
+   * @return {void}
+   */
+  function triggerLayout() {
+    // console.log('Called triggerLayout');
+    // document.body.style.margin = 'auto';
+    // elements[0].style.margin = 'auto';
+    // document.querySelector('.o-zorro-svg__image').style.margin = 'auto';
+    // document.querySelector('.o-zorro-svg__image').style.margin = '0 -1px';
+  }
+  // window.addEventListener('zorroSvgLoaded', function() {
+  //   if (hasTriggeredLayout) {
+  //     return false;
+  //   } else if (imagesLoaded === totalImages) {
+  //     console.log('All images loaded, triggering layout.');
+  //     // setTimeout(triggerLayout, 1000);
+  //     // setTimeout(triggerLayout, 0);
+  //     triggerLayout();
+  //   }
+  // }, false);
+
+
+
+  // TODOs:
+  // Trigger layout in Safari
+  // Fix IE fallback
+  // Check old browser versions
+  </script>
+</body>
+</html>

@@ -54,9 +54,13 @@
   height: 100%;
 }
 
+
+
 // ------------------------------
 // ------------------------------
 // ------------------------------
+
+
 
 // Note: This could work, but we have to get the animation to trigger once the
 // images are loaded, not before. Seems like JS is the only way.
@@ -68,9 +72,53 @@
 //   animation: 0.1s trigger-repaint 1s;
 // }
 
+
+
 // ------------------------------
 // ------------------------------
 // ------------------------------
+
+// TODO: Blur animation
+// ._blur {
+//   transition: filter 300ms;
+//   -webkit-filter: blur(22px);
+//   filter: blur(22px);
+// }
+
+// Placeholder blur animation
+// .o-responsive-image {
+//   position: relative;
+//   overflow: hidden;
+// }
+// .o-responsive-image__placeholder {
+//   width: 100%;
+//   -webkit-filter: blur(22px);
+//   filter: blur(22px);
+// }
+// .o-responsive-image__image {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// }
+// /* fade image in after load */
+// .lazyload,
+// .lazyloading {
+//   opacity: 0;
+// }
+// .lazyloaded {
+//   transition: opacity 300ms;
+//   opacity: 1;
+// }
+
+
+
+// ------------------------------
+// ------------------------------
+// ------------------------------
+
+
 
 /**
  * Sample styles to position ZorroSVG images and content.
@@ -107,9 +155,13 @@
   }
 }
 
+
+
 // ------------------------------
 // ------------------------------
 // ------------------------------
+
+
 
 /**
  * Decorations
