@@ -190,22 +190,21 @@
    * @return {void}
    */
   function triggerLayout() {
-    // console.log('Called triggerLayout');
-    // document.body.style.margin = 'auto';
-    // elements[0].style.margin = 'auto';
-    // document.querySelector('.o-zorro-svg__image').style.margin = 'auto';
-    // document.querySelector('.o-zorro-svg__image').style.margin = '0 -1px';
+    // http://stackoverflow.com/a/3485654/1786459
+    var el = document.querySelector('.o-zorro-svg__image');
+    el.style.display = 'none';
+    el.style.display = '';
   }
-  // window.addEventListener('zorroSvgLoaded', function() {
-  //   if (hasTriggeredLayout) {
-  //     return false;
-  //   } else if (imagesLoaded === totalImages) {
-  //     console.log('All images loaded, triggering layout.');
-  //     // setTimeout(triggerLayout, 1000);
-  //     // setTimeout(triggerLayout, 0);
-  //     triggerLayout();
-  //   }
-  // }, false);
+  window.addEventListener('zorroSvgLoaded', function() {
+    if (hasTriggeredLayout) {
+      return false;
+    } else if (imagesLoaded === totalImages) {
+      console.log('All images loaded, triggering layout.');
+      // setTimeout(triggerLayout, 1000);
+      // setTimeout(triggerLayout, 0);
+      triggerLayout();
+    }
+  }, false);
 
 
 
