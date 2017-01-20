@@ -9,6 +9,9 @@
   <!-- Styles -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Scripts -->
+  <script async src="js/script.js"></script>
 </head>
 <body>
 
@@ -60,74 +63,21 @@
     </div>
   </section>
 
-  <!-- Scripts -->
-  <script src="/node_modules/lazysizes/lazysizes.min.js"></script>
-  <script>
-  /**
-   * Matches.
-   * @param  {Element}  elem
-   * @param  {String}   selector
-   * @return {Boolean}
-   */
-  function matches(elem, selector) {
-    if (!selector || !elem || elem.nodeType !== 1) {
-      return false;
-    }
+  <!-- Table of Contents -->
+  <ol style="position: relative; padding: 2em; z-index: 100;">
+    <li><a href="/00-default.html">ZorroSVG (default)</a></li>
+    <li><a href="/01-zorrosvg.html">ZorroSVG</a></li>
+    <li><a href="/02-as-background.html">As Background</a></li>
+    <li><a href="/03-using-img.html">Using Img</a></li>
+    <li><a href="/04-local-img.html">Local Img</a></li>
+    <li><a href="/05-img-srcset.html">Img Srcset</a></li>
+    <li><a href="/06-js-trigger-layout.html">JS Trigger Layout</a></li>
+    <li><a href="/07-js-resize-window.html">JS Resize Window</a></li>
+    <li><a href="/08-js-all-the-things.html">JS All The Things</a></li>
+    <li><a href="/09-meta-viewport.html">Meta Viewport</a></li>
+    <li><a href="/10-js-trigger-layout-for-real.html">JS Trigger Layout (For Real)</a></li>
+    <li><a href="/11-js-lazysizes.html">JS Lazy Sizes</a></li>
+  </ol>
 
-    var matchesSelector = elem.webkitMatchesSelector ||
-      elem.mozMatchesSelector ||
-      elem.oMatchesSelector ||
-      elem.msMatchesSelector ||
-      elem.matchesSelector;
-
-    if (matchesSelector) {
-      return matchesSelector.call(elem, selector);
-    }
-
-    return false;
-  }
-
-  /**
-   * Closest.
-   * @param  {Element}  elem
-   * @param  {String}   selector
-   * @return {Element}
-   */
-  function closest(elem, selector) {
-    while (elem && !this.matches(elem, selector)) {
-      elem = elem.parentNode;
-    }
-
-    return elem || null;
-  }
-
-  /**
-   * Add class to lazysizes parent before unveiling.
-   * @see https://github.com/aFarkas/lazysizes#js-api---events
-   * @param  {Event}  e
-   * @return {void}
-   */
-  document.addEventListener('lazybeforeunveil', function(e) {
-    // NOTE: This fades in 2sec before actual image load
-    // var parent = closest(e.target, '.o-lazyload');
-    // if (!parent) { return false; }
-    // parent.classList.add('has-loaded');
-  });
-
-  /**
-   * Once the user agent has fully parsed the element and its descendants and
-   * is ready to render the element to the target device.
-   *
-   * Referenced external resources that are required must be loaded, parsed
-   * and ready to render before the event is triggered.
-   *
-   * @see https://developer.mozilla.org/en-US/docs/Web/Events/SVGLoad
-   */
-  document.querySelector('svg').addEventListener('load', function(e) {
-    var parent = closest(e.target, '.o-lazyload');
-    if (!parent) { return false; }
-    parent.classList.add('has-loaded');
-  });
-  </script>
 </body>
 </html>

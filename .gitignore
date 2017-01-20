@@ -1,2 +1,4 @@
-css/*.css
-css/*.css.map
+/node_modules
+/public/css
+/public/img
+/public/js
