@@ -1,0 +1,133 @@
+<!-- 11-js-lazysizes -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by Tanner Hodges</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ZorroSVG as background image w/ browser fixes -->
+  <section class="o-zorro-svg  /  o-lazyload  /  c-home-food">
+    <object class="_fix-safari-svg-height  /  o-zorro-svg__image">
+
+      <!-- Placeholder -->
+      <!-- /img/home-food__bg-27.png -->
+      <img class="_make-it-fit  /  o-lazyload__placeholder"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAQCAMAAADQzfSkAAABgFBMVEVMaXErLjI4P0peZGo3OkAoLTVVX2laXmLj0MJHTldVWV1PUlZrTz5BSE/y59yoj4EjKC4xNDkMCAUGBATfzLxiaGxnVU2SXSu4nH8mKjBhbHkiJCgAAAAAAAAAAAAAAABNOzAAAAARCgoTERNxYVdJPTmhi3iLgXtob3c0OD5WXmeGjpeQl59MUlo8RE55gYmBiJE2PEOMk5pvdX1QOSxHTFNCRkw9P0Oeg2OWm6F0Xk4wNDp0e4JbZnJ8h5FQWGInKS7mwZ4JAgDTuZ07QEdxVTpqc35cYGZDQEH17eWepa303sLSqHyhhGvlya6NdVy2tZgeFxxJGgSyoXJgZmzx3dGwkHdVSkZDUV1aOiHGmXe1nIrDpouCbGl9Yk3////Lr5m3ZzW+jGExDgF+LwqGQCGlnJS+r6VoOBdLLRuYkZE0JSPcwatpZkl/dnXAvrkrLzaRnaro2c3/78aPion///q6oJe4ucHLvKtHNwbdnG9iVwoWNwCPm2wYQAYkMgDdtnwHAAAAKHRSTlMA8m3y8m1v8v5v8vLy7vv38vKoTfny+fn5eG/lDAUiuPJ1k4Pgv+ryNVMb4QAAAWhJREFUeF51jFVvG0EURmeNG0Oc2q7tNFCEWWY0MzNjmKnM8Nc79ktfkiNd6ZOO7gFbKQzDbF63y2m1Pl7iQsvpdntHXvCIyOVUpidxPEVRokiLaCS4WAzW3wKboClMEnIUTRu0UamIxqfby0ritHYQBjaC0NQijPEryRvfGtnDyeSsn85GUDMa1RgoxThU5O/2lnz+WC2Xy+sAI6KCqhYLksQbIt/KRrq/u91WFf+wjgPsHXIKWYBSgn7/tfnrz9+fR53vrT6OB5eOyCkklCDFhfL1fPj4pHNyPEVvvpUTFIYscAm5c7T4cXCo19K1GR4MeVZNllWScSifzxp6fqzrevPG9JkXvpXLsQwZH44Hjev9YbvdzmQyV7JshsBGCkVZJknCoprSesXS/Mt+vSlnZNPz38WTLEvGR0JpjlfT6cFCfgbsm3a73WJZcyCeIByWl6/fZKev/E/94D4CL54HdrfBQ+yg+wdu+1LGE/WEoAAAAABJRU5ErkJggg==" alt="" />
+
+      <!-- SVG -->
+      <svg class="_fix-safari-svg-height__svg  /  o-lazyload__image" width="1200" height="717" viewBox="0 0 1200 717" preserveAspectRatio="xMinYMin slice">
+
+        <!-- Filter -->
+        <defs>
+          <filter id="svg-filter">
+            <feOffset dy="-717" in="SourceGraphic" result="b"></feOffset>
+            <feColorMatrix in="b" result="b" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0"></feColorMatrix>
+            <feComposite in="SourceGraphic" in2="b" operator="in"></feComposite>
+          </filter>
+        </defs>
+
+        <!-- Image -->
+        <g filter="url(#svg-filter)">
+          <foreignObject x="0" y="0" width="100%" height="200%">
+            <img class="lazyload"
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              data-srcset="/img/progressive/home-food__bg-3x.jpg 1200w,
+                /img/progressive/home-food__bg-2.5x.jpg 1000w,
+                /img/progressive/home-food__bg-2x.jpg 800w,
+                /img/progressive/home-food__bg-1.5x.jpg 600w,
+                /img/progressive/home-food__bg.jpg 400w"
+              data-sizes="100vw"
+              alt="">
+          </foreignObject>
+        </g>
+
+      </svg>
+    </object>
+
+    <!-- Content -->
+    <div class="o-zorro-svg__content  /  u-padding">
+      <h1>Responsive ZorroSVG w/ placeholder data URI</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aliquam natus veniam quaerat odit culpa porro mollitia dolores et cupiditate alias fugit sed, sit tenetur error! Incidunt quasi, voluptate assumenda.
+      </p>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="/node_modules/lazysizes/lazysizes.min.js"></script>
+  <script>
+  /**
+   * Matches.
+   * @param  {Element}  elem
+   * @param  {String}   selector
+   * @return {Boolean}
+   */
+  function matches(elem, selector) {
+    if (!selector || !elem || elem.nodeType !== 1) {
+      return false;
+    }
+
+    var matchesSelector = elem.webkitMatchesSelector ||
+      elem.mozMatchesSelector ||
+      elem.oMatchesSelector ||
+      elem.msMatchesSelector ||
+      elem.matchesSelector;
+
+    if (matchesSelector) {
+      return matchesSelector.call(elem, selector);
+    }
+
+    return false;
+  }
+
+  /**
+   * Closest.
+   * @param  {Element}  elem
+   * @param  {String}   selector
+   * @return {Element}
+   */
+  function closest(elem, selector) {
+    while (elem && !this.matches(elem, selector)) {
+      elem = elem.parentNode;
+    }
+
+    return elem || null;
+  }
+
+  /**
+   * Add class to lazysizes parent before unveiling.
+   * @see https://github.com/aFarkas/lazysizes#js-api---events
+   * @param  {Event}  e
+   * @return {void}
+   */
+  document.addEventListener('lazybeforeunveil', function(e) {
+    // NOTE: This fades in 2sec before actual image load
+    // var parent = closest(e.target, '.o-lazyload');
+    // if (!parent) { return false; }
+    // parent.classList.add('has-loaded');
+  });
+
+  /**
+   * Once the user agent has fully parsed the element and its descendants and
+   * is ready to render the element to the target device.
+   *
+   * Referenced external resources that are required must be loaded, parsed
+   * and ready to render before the event is triggered.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/Events/SVGLoad
+   */
+  document.querySelector('svg').addEventListener('load', function(e) {
+    var parent = closest(e.target, '.o-lazyload');
+    if (!parent) { return false; }
+    parent.classList.add('has-loaded');
+  });
+  </script>
+</body>
+</html>

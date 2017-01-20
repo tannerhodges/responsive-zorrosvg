@@ -1,0 +1,42 @@
+/**
+ * Sample styles to position ZorroSVG images and content.
+ */
+.c-home-food {
+  padding: 0 0 59.75%;
+  margin-bottom: calc(-9.6666666667% - 2px);
+
+  .o-zorro-svg__image {
+    height: 100%;
+    padding: 0;
+  }
+  .o-zorro-svg__content {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 83.8214783821%;
+    top: 0;
+  }
+
+  // Mobile
+  // @media (max-width: 47.9375em) {
+  @media (max-width: 475px) {
+    height: auto;
+    margin: -2px 0;
+    padding-bottom: 0;
+
+    .o-zorro-svg__image {
+      height: 119.301164725%;
+    }
+    .o-zorro-svg__content {
+      position: relative;
+      height: auto;
+    }
+  }
+}
+
+/**
+ * Decorations.
+ */
+.c-home-food {
+  color: #fff;
+}

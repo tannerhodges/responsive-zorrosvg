@@ -1,0 +1,32 @@
+// .o-lazyload {
+// }
+
+.o-lazyload__placeholder {
+  opacity: 1;
+  filter: blur(5px);
+}
+
+.o-lazyload__image {
+  opacity: 0;
+}
+
+.o-lazyload.has-loaded {
+  .o-lazyload__placeholder {
+    transition: opacity 1800ms ease-out 200ms;
+    opacity: 0;
+  }
+  .o-lazyload__image {
+    transition: opacity 600ms ease-out;
+    opacity: 1;
+  }
+}
+
+// HACK: Make it fit!
+// scss-lint:disable ImportantRule
+._make-it-fit {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: top left;
+}
+// scss-lint:enable ImportantRule
