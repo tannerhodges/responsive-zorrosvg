@@ -50,8 +50,14 @@
    */
   document.querySelector('svg').addEventListener('load', function(e) {
     var parent = closest(e.target, '.o-lazyload');
-    if (!parent) { return false; }
+
+    if (!parent) {
+      return false;
+    }
+
     parent.classList.add('has-loaded');
+
+    return true;
   });
 
 })(window, document);
