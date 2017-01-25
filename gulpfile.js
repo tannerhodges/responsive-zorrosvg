@@ -1,6 +1,13 @@
-var elixir = require('laravel-elixir');
+const elixir = require('laravel-elixir');
+const zorrosvg = require('gulp-zorrosvg');
 
-elixir(function(mix) {
+gulp.task('zorrosvg', () =>
+  gulp.src('resources/assets/img/zorrosvg/*.png')
+    .pipe(zorrosvg())
+    .pipe(gulp.dest('public/img/zorrosvg'))
+);
+
+elixir((mix) => {
   // CSS
   mix.copy('resources/assets/css', 'public/css');
   mix.sass('style.scss', 'css/style.css');
