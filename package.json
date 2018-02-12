@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/tannerhodges/responsive-zorrosvg.git"
   },
-  "author": "",
+  "author": {
+    "name": "Tanner Hodges",
+    "email": "austintannerhodges@gmail.com",
+    "url": "https://tannerhodges.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tannerhodges/responsive-zorrosvg/issues"
